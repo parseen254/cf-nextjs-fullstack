@@ -10,5 +10,5 @@ export async function GET(request: NextRequest) {
 
   const result = await getDB(env.DB).select().from(tasks);
 
-  return new Response(JSON.stringify(result))
+  return new Response(JSON.stringify({ tasks: result }, null, '\t'))
 }
