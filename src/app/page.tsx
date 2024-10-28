@@ -12,7 +12,7 @@ export default function Home() {
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
                   Welcome to Cloudflare Next.js Template
                 </h1>
-                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+                <p className="mx-auto max-w-[700px] md:text-xl text-muted-foreground">
                   Jumpstart your web projects with the power of Cloudflare and
                   Next.js. Fast, secure, and scalable.
                 </p>
@@ -20,7 +20,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="w-full flex justify-center py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+        <section className="w-full flex justify-center py-12 md:py-24 lg:py-32 bg-muted">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">
               Key Features

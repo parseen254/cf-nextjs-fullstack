@@ -26,7 +26,7 @@ export default function AuthModal() {
       <DialogTrigger asChild>
         <Button>Sign In / Sign Up</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[1/2] p-8">
+      <DialogContent className="p-8">
         <DialogHeader>
           <DialogTitle>Authentication</DialogTitle>
           <DialogDescription>

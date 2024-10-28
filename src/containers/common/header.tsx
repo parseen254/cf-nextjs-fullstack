@@ -1,7 +1,7 @@
 import AuthModal from "../auth/auth-modal";
 import { CloudIcon } from "lucide-react";
 import Link from "next/link";
-import { ModeToggle } from "@/components/mode-toggle";
+import { ModeToggle } from "@/containers/common/mode-toggle";
 
 type Props = {};
 
