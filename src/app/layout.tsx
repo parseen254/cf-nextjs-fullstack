@@ -1,7 +1,7 @@
 import "./globals.css";
 
-import Footer from "@/containers/footer";
-import Header from "@/containers/header";
+import Footer from "@/containers/common/footer";
+import Header from "@/containers/common/header";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";

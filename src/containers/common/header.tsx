@@ -1,3 +1,4 @@
+import AuthModal from "../auth/auth-modal";
 import { CloudIcon } from "lucide-react";
 import Link from "next/link";
 import { ModeToggle } from "@/components/mode-toggle";
@@ -17,7 +18,8 @@ export default function Header({}: Props) {
           <p className="font-bold text-lg">Cloudflare Next.js Template</p>
         </div>
       </div>
-      <div className="flex-0">
+      <div className="flex-0 flex gap-4">
+        <AuthModal />
         <ModeToggle />
       </div>
     </header>
