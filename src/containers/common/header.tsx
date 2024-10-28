@@ -18,7 +18,7 @@ export default function Header({}: Props) {
           <p className="font-bold text-lg">Cloudflare Next.js Template</p>
         </div>
       </div>
-      <div className="flex-0 flex mt-8 md:mt-0 justify-center gap-4">
+      <div className="flex-0 flex mt-8 md:mt-0 justify-center gap-4 items-end">
         <AuthModal />
         <ModeToggle />
       </div>

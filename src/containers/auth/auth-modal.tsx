@@ -59,7 +59,8 @@ function SignInForm() {
           startIcon={Mail}
           id="email"
           type="email"
-          placeholder="m@example.com"
+          placeholder="mail@example.com"
+          autoComplete="email"
           required
         />
       </div>
@@ -93,7 +94,13 @@ function SignUpForm() {
     <form className="space-y-4 px-2">
       <div className="space-y-4">
         <Label htmlFor="name">Name</Label>
-        <Input startIcon={User} id="name" placeholder="John Doe" required />
+        <Input
+          startIcon={User}
+          id="name"
+          placeholder="John Doe"
+          autoComplete="name"
+          required
+        />
       </div>
       <div className="space-y-4">
         <Label htmlFor="email">Email</Label>
@@ -101,7 +108,8 @@ function SignUpForm() {
           startIcon={Mail}
           id="email"
           type="email"
-          placeholder="m@example.com"
+          placeholder="mail@example.com"
+          autoComplete="email"
           required
         />
       </div>
