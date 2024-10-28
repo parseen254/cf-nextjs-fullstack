@@ -1,8 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CloudIcon, CodeIcon, GlobeIcon, ZapIcon } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">

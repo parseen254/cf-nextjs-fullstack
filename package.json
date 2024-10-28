@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npx wrangler pages dev --local --d1=fullstack-nextjs next dev",
+    "dev": "npx @cloudflare/next-on-pages --watch & npx wrangler pages dev --local --d1=fullstack-nextjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
