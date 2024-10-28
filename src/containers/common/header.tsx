@@ -7,8 +7,8 @@ type Props = {};
 
 export default function Header({}: Props) {
   return (
-    <header className="pt-12 px-8 lg:px-48 flex items-center">
-      <div className="flex-1 flex flex-col items-center">
+    <header className="pt-12 px-8 lg:px-48 flex-col md:flex-row flex lg:items-center">
+      <div className="flex-1 flex flex-col items-center md:items-start lg:items-center">
         <div className="flex-1">
           <Link href="/">
             <CloudIcon className="h-8 w-8" />
@@ -18,7 +18,7 @@ export default function Header({}: Props) {
           <p className="font-bold text-lg">Cloudflare Next.js Template</p>
         </div>
       </div>
-      <div className="flex-0 flex gap-4">
+      <div className="flex-0 flex mt-8 md:mt-0 justify-center gap-4">
         <AuthModal />
         <ModeToggle />
       </div>
