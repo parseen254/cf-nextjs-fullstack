@@ -4,6 +4,7 @@ import Footer from "@/containers/common/footer";
 import Header from "@/containers/common/header";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
+import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -28,9 +29,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          {children}
-          <Footer />
+          <SessionProvider>
+            <Header />
+            {children}
+            <Footer />
+          </SessionProvider>
         </ThemeProvider>
       </body>
     </html>
