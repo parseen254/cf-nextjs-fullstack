@@ -1,7 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CloudIcon, CodeIcon, GlobeIcon, ZapIcon } from "lucide-react";
 
-export default function Home() {
+import { auth } from "@/auth";
+
+export const runtime = "edge";
+
+export default async function Home() {
+  const session = await auth();
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1  flex flex-col">
@@ -10,7 +15,7 @@ export default function Home() {
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                  Welcome to Cloudflare Next.js Template
+                  Welcome {session?.user?.name} to Cloudflare Next.js Template
                 </h1>
                 <p className="mx-auto max-w-[700px] md:text-xl text-muted-foreground">
                   Jumpstart your web projects with the power of Cloudflare and
