@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npx @cloudflare/next-on-pages --watch & npx wrangler pages dev --local --d1=fullstack-nextjs --local-protocol http",
+    "dev": "npm run pages:build --watch & wrangler pages dev --local --d1=fullstack-nextjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -52,6 +52,6 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5",
     "vercel": "^37.12.1",
-    "wrangler": "^3.83.0"
+    "wrangler": "^3.84.1"
   }
 }
