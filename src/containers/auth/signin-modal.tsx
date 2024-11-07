@@ -44,7 +44,7 @@ export default function AuthModal() {
 function SignInForm() {
   async function handleEmailMagicLink(formData: FormData) {
     const email = formData.get("email") as string;
-    await signIn("http-email", { email });
+    await signIn("magic-link", { email });
   }
 
   return (
