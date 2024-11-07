@@ -10,13 +10,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Lock, Mail, User } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent } from "@/components/ui/tabs";
 
 import { Button } from "@/components/ui/button";
-import GoogleIcon from "../icons/google";
+import GoogleIcon from "@/containers/icons/google";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Mail } from "lucide-react";
 import { signIn } from "next-auth/react";
 
 export default function AuthModal() {
@@ -43,14 +42,19 @@ export default function AuthModal() {
 }
 
 function SignInForm() {
+  async function handleEmailMagicLink(formData: FormData) {
+    const email = formData.get("email") as string;
+    await signIn("http-email", { email });
+  }
+
   return (
     <div className="space-y-4 px-2">
-      {/* <form action="" className="space-y-4">
+      <form action={handleEmailMagicLink} className="space-y-4">
         <div className="space-y-4">
-          <Label htmlFor="email">Email</Label>
           <Input
             startIcon={Mail}
             id="email"
+            name="email"
             type="email"
             placeholder="mail@example.com"
             autoComplete="email"
@@ -70,7 +74,7 @@ function SignInForm() {
             </span>
           </div>
         </div>
-      </form> */}
+      </form>
       <Button
         variant="outline"
         className="w-full"
