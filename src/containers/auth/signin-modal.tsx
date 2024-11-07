@@ -10,12 +10,12 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { LogIn, Mail } from "lucide-react";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 
 import { Button } from "@/components/ui/button";
 import GoogleIcon from "@/containers/icons/google";
 import { Input } from "@/components/ui/input";
-import { Mail } from "lucide-react";
 import { signIn } from "next-auth/react";
 
 export default function AuthModal() {
@@ -24,7 +24,9 @@ export default function AuthModal() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button>Sign In</Button>
+        <Button>
+          Sign In <LogIn />
+        </Button>
       </DialogTrigger>
       <DialogContent className="p-8">
         <DialogHeader>

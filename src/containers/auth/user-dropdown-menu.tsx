@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+import { LogOut } from "lucide-react";
 import type { Session } from "next-auth";
 import { signOut } from "next-auth/react";
 
@@ -39,7 +40,9 @@ export function UserDropdownMenu({ session }: UserProps) {
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => signOut()}>
           Sign out
-          <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+          <DropdownMenuShortcut>
+            <LogOut />
+          </DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
