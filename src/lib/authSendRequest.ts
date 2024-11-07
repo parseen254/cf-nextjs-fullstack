@@ -1,4 +1,5 @@
 import { Theme, sendVerificationRequestParams } from "@/lib/types";
+import { createSendEmailCommand, sesClient } from "@/lib/sesClient";
 import { html, text } from "@/lib/utils/emails";
 
 export async function sendVerificationRequest(
@@ -6,23 +7,18 @@ export async function sendVerificationRequest(
 ) {
   const { identifier: to, provider, url, theme } = params;
   const { host } = new URL(url);
-  // const res = await fetch("https://api.resend.com/emails", {
-  //   method: "POST",
-  //   headers: {
-  //     Authorization: `Bearer ${provider.apiKey}`,
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify({
-  //     from: provider.from,
-  //     to,
-  //     subject: `Sign in to ${host}`,
-  //     html: html({ url, host, theme }),
-  //     text: text({ url, host }),
-  //   }),
-  // });
 
-  // if (!res.ok)
-  //   throw new Error("Resend error: " + JSON.stringify(await res.json()));
+  const sendEmailCommand = createSendEmailCommand(
+    to,
+    "no-reply@parseen.dev",
+    `Sign in to ${host}`,
+    html({ url, host, theme }),
+    text({ url, host })
+  );
 
-  // Implement AWS SES email sending logic
+  try {
+    await sesClient().send(sendEmailCommand);
+  } catch (caught) {
+    throw new Error("Resend error: " + JSON.stringify({ caught }));
+  }
 }
