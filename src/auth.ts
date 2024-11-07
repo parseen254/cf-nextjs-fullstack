@@ -18,6 +18,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth(() => {
         type: "email",
         maxAge: 60 * 60 * 24, // Email link will expire in 24 hours
         sendVerificationRequest,
+        from: "no-reply@parseen.dev",
       },
     ],
     adapter: DrizzleAdapter(db, {

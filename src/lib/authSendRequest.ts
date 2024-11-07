@@ -1,6 +1,7 @@
-import { Theme, sendVerificationRequestParams } from "@/lib/types";
 import { createSendEmailCommand, sesClient } from "@/lib/sesClient";
 import { html, text } from "@/lib/utils/emails";
+
+import { sendVerificationRequestParams } from "@/lib/types";
 
 export async function sendVerificationRequest(
   params: sendVerificationRequestParams
@@ -10,7 +11,7 @@ export async function sendVerificationRequest(
 
   const sendEmailCommand = createSendEmailCommand(
     to,
-    "no-reply@parseen.dev",
+    provider.from as string,
     `Sign in to ${host}`,
     html({ url, host, theme }),
     text({ url, host })
