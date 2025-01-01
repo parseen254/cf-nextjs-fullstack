@@ -46,7 +46,10 @@ export default function AuthModal() {
 function SignInForm() {
   async function handleEmailMagicLink(formData: FormData) {
     const email = formData.get("email") as string;
-    await signIn("magic-link", { email });
+    await signIn("magic-link", { 
+      email,
+      callbackUrl: '/dashboard'
+    });
   }
 
   return (
@@ -79,7 +82,7 @@ function SignInForm() {
       <Button
         variant="outline"
         className="w-full"
-        onClick={() => signIn("google")}
+        onClick={() => signIn("google", { callbackUrl: '/dashboard' })}
       >
         <GoogleIcon className="mr-2 h-4 w-4" />
         Google
