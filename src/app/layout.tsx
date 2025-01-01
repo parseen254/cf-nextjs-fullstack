@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     "Jumpstart your web projects with the power of Cloudflare and Next.js. Fast, secure, and scalable",
 };
 
+export const runtime = "edge";
+
+
 export default async function RootLayout({
   children,
 }: Readonly<{
