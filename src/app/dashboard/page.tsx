@@ -89,7 +89,7 @@ const DashboardPage = async () => {
                 />
               </div>
 
-              <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white">
+              <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
                 Save Changes
               </Button>
             </form>
